@@ -5,11 +5,15 @@
 //2. Import Es6 - import
 
 //importar las funciones del modulo matematicas
-const moduloMatematicas = require("./matematicas");
-console.log(moduloMatematicas);
+// const moduloMatematicas = require("./matematicas");
+// console.log(moduloMatematicas);
 
-const fact = moduloMatematicas.factorial(5);
+//manera mas limpia de hacer importe de las funciones
+//que se necesiten, con la destructuración de objetos.
+const {factorial, suma} = require("./matematicas");
+
+const fact = factorial(5);
 console.log(fact);
 
-const sum = moduloMatematicas.suma(12, 90);
+const sum = suma(12, 90);
 console.log(sum);
