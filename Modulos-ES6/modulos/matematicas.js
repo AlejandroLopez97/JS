@@ -1,0 +1,27 @@
+//manera de exportar en ES6
+/**Anteponemos la palabra export de cada
+ * funcion que deseemos exportar a una manera 
+ * global
+ */
+
+export function suma(a, b){
+    return a + b;
+}
+
+export function multiplica(a, b){
+    return a * b;
+}
+
+export function eleva(a, b){
+    return a ** b;
+}
+
+export function factorial (a){
+    let factorial = 1;
+    for(let i = 2; i <= a; i++){
+        factorial *= i;
+    }
+    return factorial;
+}
+
+export const nombre = "matematicas";
