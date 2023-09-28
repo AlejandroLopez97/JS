@@ -1,27 +1,15 @@
 //Manejo de modulos con JS
 
-function suma(a, b){
-    return a + b;
-}
+//formas de importar/exportar modulos
+//1. CommonJs - require
+//2. Import Es6 - import
 
-function multiplica(a, b){
-    return a * b;
-}
+//importar las funciones del modulo matematicas
+const moduloMatematicas = require("./matematicas");
+console.log(moduloMatematicas);
 
-function eleva(a, b){
-    return a ** b;
-}
-
-function factorial (a){
-    let factorial = 1;
-    for(let i = 2; i <= a; i++){
-        factorial *= i;
-    }
-    return factorial;
-}
-
-const fact = factorial(5);
+const fact = moduloMatematicas.factorial(5);
 console.log(fact);
 
-const sum = suma(12, 90);
+const sum = moduloMatematicas.suma(12, 90);
 console.log(sum);
