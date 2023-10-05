@@ -1,6 +1,6 @@
 /**Obtener elementos por ID */
 
-const titulo = document.getElementById('titulo');
+const titulo1 = document.getElementById('titulo');
 console.log(titulo.tagName);
 
 /**Obtener varios elementos por la misma clase */
@@ -41,4 +41,47 @@ console.log(typeof aceituna); //retorna un objeto
 //Puedo juntar 2 selectores en una busqueda con el querySelector
 const primerToppingNaranja = document.querySelector('.topping.fondo-naranja');
 console.log(primerToppingNaranja);
+
+//Obtengo a traves de un selector CSS con la utilidad del :not
+const primerToppingNoMarron = document.querySelector('ul li:not(.fondo-marron)');
+console.log(primerToppingNoMarron);
+
+//QuerySelectorAll donde puedo utilizar selector de CSS, pero me trae todos los 
+//Elementos del DOM que cumplan con dicho selector, retorna una NodeList
+//Lista de nodos
+const toppingsNaranja = document.querySelectorAll('.topping.fondo-naranja');
+console.log(toppingsNaranja);
+console.log(toppingsNaranja[0]);
+console.log(toppingsNaranja.length); //miro la cantidad de elementos
+//Las listas de nodos son identificados en JS con objetos de JS y pueden ser tratados
+//de dicha manera.
+
+
+/**ASIGNAR ESTILOS EN EL DOM CON JS */
+const primerTopping = document.querySelector('.topping');
+
+//con style podemos asignarle stilo CSS3
+console.log(primerTopping.style); //para ver todas las propiedades que puedo personalizar
+//Con la notacion de punto se adicionan estilos en linea, osea que le agrega 
+//la propiedad Style: a la etiqueta HTML
+primerTopping.style.backgroundColor = 'blue';
+primerTopping.style.color = '#6dff00';
+primerTopping.style.textTransform = 'uppercase';
+
+const listaDeToppings = document.getElementById('lista-toppings');
+console.log(listaDeToppings.innerText); //texto interno retornando cadena de caracteres
+console.log(listaDeToppings.textContent); //similar al innerText pero trae los espacios que tiene ese texto en el HTML
+
+//Retorna la estructura HTML de la etiqueta en una cadena de caracteres
+console.log(listaDeToppings.innerHTML);
+
+/**Modificar ese texto obtenido */
+const titulo = document.getElementById('titulo');
+console.log(titulo);
+console.log(titulo.innerText);
+
+titulo.innerText = 'Mis Toppings Favoritos';
+
+
+
 
