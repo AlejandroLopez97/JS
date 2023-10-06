@@ -78,10 +78,33 @@ console.log(listaDeToppings.innerHTML);
 /**Modificar ese texto obtenido */
 const titulo = document.getElementById('titulo');
 console.log(titulo);
-console.log(titulo.innerText);
+//console.log(titulo.innerText);
 
 titulo.innerText = 'Mis Toppings Favoritos';
 
 
+/**Modificar los atributos de un elemento */
+const enlace = document.getElementsByTagName('a');
+console.log(enlace);
+console.log(enlace[0].getAttribute('href')); //obtiene el atributo
+//console.log(enlace[0].removeAttribute('href')); ELimina el atributo
+console.log(enlace[0].setAttribute('href', 'https://www.freecodecamp.org')); //Modifica el atributo
+
+/**CLASES CON JS EN EL DOM */
+const firstTopping = document.querySelector('.topping');
+console.log(firstTopping);
+console.log(firstTopping.classList);
+
+//Para la clase de la etiqueta 
+firstTopping.classList.add('texto-verde');
+
+//Verificar si existe una clase 
+console.log(firstTopping.classList.contains('fondo-marron'));
+console.log(firstTopping.classList.contains('fondo-azul'));
+
+//Remover una clase de la etiqueta que hemos capturado
+firstTopping.classList.remove('topping');
+
+/**OPERACIONES IMPORTANTES EN EL DOM */
 
 
