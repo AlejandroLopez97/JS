@@ -106,5 +106,46 @@ console.log(firstTopping.classList.contains('fondo-azul'));
 firstTopping.classList.remove('topping');
 
 /**OPERACIONES IMPORTANTES EN EL DOM */
+//Creo el elemento
+const listaDeToppings_ = document.getElementById('lista-toppings');
+const toppingNuevo = document.createElement('li'); //tipo lista
+//Le asigno unas clases al elemento y un texto
+toppingNuevo.classList.add('topping', 'fondo-marron');
+toppingNuevo.innerText = 'Queso Extra';
 
+listaDeToppings_.append(toppingNuevo);//Agrego el nuevo elemento creado
 
+toppingNuevo.remove();//Elimino el elemento
+
+/**Para agregar un elemento tambien utlizamos 
+ * appendChild() que nos agrega especificamente un elemento HTML
+ * mientras que el metodo append() nos permite agregar tanto elementos HTML
+ * como texto, donde le indiquemos que se agregue.
+ */
+
+/**RECORRER EL DOM  */
+//Obtenemos el elemento padre HTML de la etiqueta trabajada
+//Se obtiene con parentElement
+console.log(listaDeToppings_.parentElement);
+
+//Con parentNode obtenemos el nodo, esto implica que obtenemos tanto
+//etiquetas HTML y texto que se encuentra dentro del elemento que estamos explorando
+
+//De esta manera obtenemos mas a profundidad los elementos padres 
+console.log(listaDeToppings_.parentElement.parentElement);
+
+//para obtener los elementos hijos utilizamos la propiedad children
+console.log(listaDeToppings_.children); //nos devuelve los hijos HTML
+console.log(listaDeToppings_.firstChild);//nos devuelve el primer nodo hijo
+console.log(listaDeToppings_.children[0]); //nos devuelve el primer elemento HTML
+console.log(listaDeToppings_.firstElementChild); //tambien nos devuelve el primer elemento HTML
+console.log(listaDeToppings_.lastChild);//nos devuelve el ultimo nodo hijo
+console.log(listaDeToppings_.lastElementChild);//nos devuelve el ultimo elemento HTML
+
+//Para obtener los elementos hermanos
+console.log(listaDeToppings_.previousElementSibling);//Nos devuelve el elemento HTML hermano anterior
+console.log(listaDeToppings_.nextElementSibling);//nos devuelve el elemento HTML hermano siguiente
+console.log(listaDeToppings_.previousSibling); //nos devuelve el nodo hermano anterior
+console.log(listaDeToppings_.nextSibling); // nos devuelve el nodo hermano siguiente
+
+/**EVENTOS EN EL DOM     */
