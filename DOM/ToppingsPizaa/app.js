@@ -1,7 +1,7 @@
 /**Obtener elementos por ID */
 
 const titulo1 = document.getElementById('titulo');
-console.log(titulo.tagName);
+//console.log(titulo.tagName);
 
 /**Obtener varios elementos por la misma clase */
 const toppings = document.getElementsByClassName('topping');
@@ -149,3 +149,32 @@ console.log(listaDeToppings_.previousSibling); //nos devuelve el nodo hermano an
 console.log(listaDeToppings_.nextSibling); // nos devuelve el nodo hermano siguiente
 
 /**EVENTOS EN EL DOM     */
+
+//Event Handler, se puso en la etiqueta <li> del topping albahaca
+//el atributo onClick:'mostrarClic()' y dentro de este se llama la función
+//que creamos en el app.js mostrarClic()
+function mostrarClic(e){
+    console.log(e.target.innerText);
+}
+
+//addEvenListener()
+const albahaca = document.getElementById('albahaca');
+albahaca.addEventListener('click', mostrarClic);
+
+/**Todos los eventos en el DOM, se representan como objetos en javascript */
+
+//con for of recorremos el objeto y mostramos
+for (const topping of toppings) {
+    topping.addEventListener('click', mostrarClic);
+}
+
+
+//otra manera mas avanzada de manejar ese evento es hacerlo
+//a traves de una función flecha
+/**
+ * for (const topping of toppings){
+ *  topping.addEventListener('click', (e) => {
+ *      console.log(e.target.innerText);
+ *  });
+ * }
+ */
